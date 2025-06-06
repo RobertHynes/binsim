@@ -1,0 +1,91 @@
+# BinSim 0.9 Sample parameter file
+#
+# Generic close OB binary
+# R. Hynes, Nov 2003
+
+# Image parameters
+Width                            = 1600
+Height                           = 1200
+Save                             = true
+Image_File                       = ob_binary.jpg
+Anim_Root                        = ./
+JPEG_Quality                     = 100
+
+# Animation parameters
+Anim                             = false
+MPEG_File                        = ob_binary.mpg
+MPEG_Pattern                     = I
+MPEG_IQScale                     = 1
+MPEG_PQScale                     = 1
+MPEG_BQScale                     = 1
+
+# Rendering parameters
+HighQuality                      = true
+Samples                          = 2
+Brightness                       = 0.4
+Contrast                         = 0.25
+Scale                            = 0.6
+XOffset                          = -0.05
+YOffset                          = 0.0
+
+# Starfield parameters
+Show_Stars                       = false
+N_Star                           = 400
+Star_Colours                     = 0.5
+Star_Size                        = 0.5
+
+# Binary parameters
+Period                           = 60.0
+q                                = 0.6
+M1                               = 15.0
+Luminosity1                      = 3e35
+Luminosity2                      = 1e35
+Inclination                      = 70.0
+Phase                            = 0.3
+Low_Phase                        = 0.00
+High_Phase                       = 1.0
+Delta_Phase                      = 0.01
+
+# Primary
+Show_Lobe1                       = true
+  Lobe1_Nsteps                   = 60
+  Lobe1_Fill                     = 0.99
+  Lobe1_T_Pole                   = 12000.0
+  Lobe1_T_Min		         = 0.85
+  Lobe1_Granulation              = 0.00
+  Lobe1_Granulation_Period       = 0.06
+
+# Mass donor
+Show_Lobe2                       = true
+  Lobe2_Nsteps                   = 60
+  Lobe2_Fill                     = 0.96
+  Lobe2_T_Pole                   = 17000.0
+  Lobe2_T_Min		         = 0.85
+  Lobe2_Granulation              = 0.00
+  Lobe2_Granulation_Period       = 0.06
+
+# Disc wind/corona #1
+Show_Corona1                     = true
+  Corona1_Rad                    = 1.2
+  Corona1_Red                    = 1.0
+  Corona1_Green                  = 1.0
+  Corona1_Blue                   = 1.0
+  Corona1_Opacity                = 1.0
+  Corona1_Exponent               = 5.0
+
+# Wind from companion star
+Show_Stellar_Wind                = true
+  Stellar_Wind_Rad               = 1.2
+  Stellar_Wind_Red               = 1.0
+  Stellar_Wind_Green             = 1.0
+  Stellar_Wind_Blue              = 1.0
+  Stellar_Wind_Opacity           = 1.0
+  Stellar_Wind_Exponent          = 5.0
+
+# Unused components
+Show_Disc                        = false
+Show_Thin_Disc                   = false
+Show_Stream                      = false
+Show_Hot_Spot                    = false
+Show_Corona2                     = false
+Show_Jet                         = false
