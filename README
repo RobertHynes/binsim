@@ -1,6 +1,5 @@
-# BinSim 0.9, Robert I. Hynes, 6 June 2025
-
-### OpenGL-based code for visualizing interacting binary stars
+BinSim 0.9, Robert I. Hynes, 18 January 2005
+============================================
 
 This program is designed to produce pretty pictures of interacting
 binaries (cataclysmic variables, X-ray binaries, etc).  In many places
@@ -16,13 +15,8 @@ yet), the accretion stream and hotspot and a 'corona', which may
 represent an accretion disc corona, a disc wind, some other kind of
 uncollimated outflow or even a white dwarf!
 
-*This code has been dormant for a long time, but has remained in use. In 
-migrating it to GitHub, I'm also working on updating the README files and 
-checking usability on different platforms. This version is currently known 
-to work on Ubuntu 22.04.*
-
-## Usage
-
+USAGE
+=====
 
 To run the program you need a parameter file.  A sample is included in
 this distribution.  Just type: 
@@ -35,7 +29,8 @@ or
 
 All options are controlled from the parameter file.
 
-## Output formats
+OUTPUT FORMATS
+==============
 
 BinSim can produce either JPEG or PPM images.  The type produced is
 determined by the extension of the Image_File parameter: for JPEG
@@ -49,25 +44,34 @@ If you do not have the libjpeg library then you can compile with the
 JPEG support is disabled.  This is the default for Windows as JPEG
 writing does not work there.
 
-## Off-screen rendering
+OFF-SCREEN RENDERING
+====================
 
 BinSim can also be built to render off-screen, so that it can be run
-from a remote session to produce an image, etc.  This takes
+from a remote telnet session to produce an image, etc.  This takes
 advantage of Mesa's off-screen option (OSMesa) so will probably not
 work with a commercial OpenGL library.  Consequently, this is not
 built by default.  If you are using Mesa and want to do this then you
 can do 'make osbinsim' to make the off-screen binary (osbinsim).  The
 usage is the same as for binsim.
 
-## 16 bits per channel
+16 bits per channel
+-------------------
 
-BinSim can also take advantage of the 16 bits per channel (64bpp)
+BinSim can also take advantage of the new 16 bits per channel (64bpp)
 OSMesa mode in Mesa 3.5.  This is not built by default and offers
 little if any benefit in the current version of BinSim.  Getting it to
 work is rather awkward, so there really isn't much point at present.
-See the INSTALL file for details of how to get this working.
+It does make it possible to build up an image of an optically thin
+region by accumulating a lot more elements.  This means it will now be
+possible to implement a high-quality voxel based model of optically
+thin objects.  These voxel objects will require completely new code so
+will take a while to introduce, but they should appear soon as I'm
+looking forward to trying this.  See the INSTALL file for details of
+how to get this working.
 
-## Animation
+ANIMATION
+=========
 
 If the Anim keyword is true then a series of images will be generated
 from Low_Phase to High_Phase with steps of Delta_Phase.  If Save is
@@ -75,9 +79,17 @@ also true then each image will be saved to Anim_Rootdir (which should
 have a lot a free space) and an MPEG movie will also be created.  This
 depends on having mpeg_encode installed.  See the INSTALL file for how
 to get this.  If Save is not defined then the sequence will only be
-rendered to the screen.  
+rendered to the screen.  Unless you have a very fast machine or
+hardware accelerated graphics, you will probably find this is too
+slow, but I have found it works quite nicely (with High_Quality turned
+off!) in full screen mode with a 3Dfx Voodoo3 card, and more recent
+cards such as the various GeForce models should give even better
+results.  Be warned that to obtain the fastest rendering speed, a lot
+of things are pre-calculated and stored, so the memory requirements
+can become quite large if too many frames are specified.
 
-## Tips
+TIPS
+====
 
 As well as lobe overflowing stars, by setting Lobe_Fill to less than
 1.0, Disc_Eff_Thick negative and turning off the stream and disc it is
@@ -86,27 +98,32 @@ irradiated star.  A white dwarf + M dwarf detached binary can be
 produced by doing this and making one of the coronae very small with a
 very high opacity to represent the white dwarf.
 
-## Parameters
+PARAMETERS
+==========
 
 Nb) Old version of renamed parameters continue to be supported via
 internal keyword translations.  See notes below.
 
-### New parameters in v0.9
+New parameters in v0.9
+----------------------
 
 Show_Lobe1, Lobe1_N_Steps, Lobe1_Fill, Lobe1_T_Pole, Lobe1_T_Min,
 Lobe1_Granulation, Lobe1_Granulation_Period, Luminosity2
 
-### Renamed parameters in v0.9
+Renamed parameters in v0.9
+-------------------------
 
 Show_Lobe, and all Lobe_* replaced by Show_Lobe2 and Lobe2_*
 
 Luminosity replaced by Luminosity1
 
-### New parameters in v0.8.1
+New parameters in v0.8.1
+------------------------
 
 None
 
-### New parameters in v0.8
+New parameters in v0.8
+----------------------
 
 Disc_R_in, Show_Stellar_Wind, Stellar_Wind_Rad, Stellar_Wind_Red, 
 Stellar_Wind_Green, Stellar_Wind_Blue, Stellar_Wind_Opacity, 
@@ -118,29 +135,40 @@ Jet_Upper_Green, Jet_Upper_Blue, Jet_Lower_Red, Jet_Lower_Green,
 Jet_Lower_Blue, Jet_Opacity, Jet_Exponent, Jet_Inclination, Jet_Rotation,
 Vertex_Log 
 
-### New parameters in v0.7.3
+New parameters in v0.7.3
+------------------------
 
 HighQuality_AA
 
-### New parameters in v0.7.2
+New parameters in v0.7.2
+------------------------
 
 None
 
-### New parameters in v0.7.1
+New parameters in v0.7.1
+------------------------
 
 None
 
-### New parameters in v0.7
+New parameters in v0.7
+----------------------
 
 Anim, Low_Phase, High_Phase, Delta_Phase, Anim_Root, MPEG_File, 
 MPEG_Pattern, MPEG_IQScale, MPEG_PQScale, MPEG_BQScale, 
 Lobe_Granulation_Period, Hot_Spot_Timescale
 
-### New parameters in v0.6.1
+New parameters in v0.6.1
+------------------------
 
 Image_File
 
-## Notes
+Parameter Definitions
+---------------------
+
+See the manual now included in the doc subdirectory
+
+Notes
+-----
 
 All boolean (True/False) parameters can also take values of On/Off or
 Yes/No.
@@ -252,13 +280,14 @@ satisfactory.
 The Stellar_Wind component is identical to a Corona except it is
 centred on the companion star.
 
-## Keyword Translations
+Keyword Translations
+--------------------
 
 A new internal module was added in v0.9 which can translate alternate
 versions of keywords.  This is intended for:
 
 1. Maintaining backward compatibility.  Where possible, old versions
-of parameters names (e.g. Show_Lobe) will be translated to their new
+of paramters names (e.g. Show_Lobe) will be translated to their new
 counterparts (Show_Lobe1 in this case) so that old parameter files
 will continue to work.
 
@@ -282,9 +311,11 @@ list->translate_keyword("Old_Keyword", "New_Keyword");
 lines as are necessary.  Note that later translations override earlier
 ones.
 
-## Bugs and 'issues'
+BUGS AND 'ISSUES'
+=================
 
-### Small triangles
+Small triangles
+---------------
 
 If the grid sizes (N_STEPS parameters) are too fine, or the scale is
 too small, or the image size is too small, then triangles can occupy a
@@ -296,19 +327,22 @@ incorporated into Mesa from version 3.5 onwards.  If you encounter
 this problem either decrease the grid size, increase the image size or
 update Mesa to version 3.5 or later.
 
-### Saving only works with software rendering
+Saving only works with software rendering
+-----------------------------------------
 
 The code to save an image does not work with Glide fullscreen mode -
 the image is blank.  This problem may be common to all hardware
 implementations but I have not been able to test any others.
 
-### Crash while encoding MPEGs
+Crash while encoding MPEGs
+--------------------------
 
 In theory mpeg_encode can work with JPEG images, but it often crashes
 with segmentation faults.  If I find a solution to this I'll implement
 it, otherwise MPEGs are constructed via (large) PPM files.
 
-### Problems with antialiasing on Mac OS X (and others???)
+Problems with antialiasing on Mac OS X (and others???)
+------------------------------------------------------
 
 Antialiasing does not work properly under Mac OS X.  The problem may
 occur on other platforms as well.  The effect is that colours become
@@ -318,7 +352,8 @@ accumulating multiple samples.  From 0.7.3 it is possible to turn off
 antialising without disabling high quality stars.  This is done by
 setting HighQuality_AA = False in the parameter file.  
 
-### Saving images under Windows
+Saving images under Windows
+---------------------------
 
 I have major problems with saving images when running on Windows.
 This is not fully functional in this version.  PPM output does work, I
@@ -329,7 +364,8 @@ proper, and even a simple image writing application reproduces it, so
 it seems to be a libjpeg bug.  For this release, JPEG output has been
 disabled on Windows, so PPM is the only option.
 
-### Generation of NaNs
+Generation of NaNs
+------------------
 
 On some platforms (Mac OS X, but not Unix/Linux or Windows?) BinSim
 can try to pass NaNs as part of vertex values.  The effect of this is
@@ -342,7 +378,8 @@ bug; please tell me.  Ideally send me the parameter file, the
 offending lines grepped from vertices.log (not the whole file!) and
 let me know what operating system and compiler you have.
 
-## Finally ...
+FINALLY...
+==========
 
 Thanks to many people who have provided me with encouragement to
 develop this code.  Also to Brian Paul and other contributors to Mesa,
@@ -376,4 +413,4 @@ use Redhat Linux 7.2 with Mesa 3.4.2 or Mesa 3.5 software rendering)
 and/or can suggest any makefile changes needed.
 
 --
-Rob Hynes, Louisiana State University, rhynes@lsu.edu
+Rob Hynes, University of Texas at Austin, rih@astro.as.utexas.edu

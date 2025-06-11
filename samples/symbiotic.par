@@ -1,0 +1,143 @@
+# BinSim 0.9 Sample parameter file
+#
+# Generic symbiotic binary
+# R. Hynes, Nov 2003
+
+# Image parameters
+Width                            = 1600
+Height                           = 1200
+Save                             = true
+Image_File                       = symbiotic.jpg
+Anim_Root                        = ./
+JPEG_Quality                     = 100
+
+# Animation parameters
+Anim                             = false
+MPEG_File                        = symbiotic.mpg
+MPEG_Pattern                     = I
+MPEG_IQScale                     = 1
+MPEG_PQScale                     = 1
+MPEG_BQScale                     = 1
+
+# Rendering parameters
+HighQuality                      = true
+Samples                          = 2
+Brightness                       = 0.8
+Contrast                         = 0.25
+Scale                            = 0.9
+XOffset                          = -0.0
+YOffset                          =  0.0
+
+# Starfield parameters
+Show_Stars                       = true
+N_Star                           = 400
+Star_Colours                     = 0.5
+Star_Size                        = 0.5
+
+# Binary parameters
+Period                           = 60.0
+q                                = 2.5
+M1                               = 1.4
+Luminosity                       = 4e34
+Inclination                      = 70.0
+Phase                            = 0.6
+Low_Phase                        = 0.00
+High_Phase                       = 1.0
+Delta_Phase                      = 0.01
+
+# Mass donor
+Show_Lobe                        = true
+  Lobe_Nsteps                    = 60
+  Lobe_Fill                      = 0.7
+  Lobe_T_Pole                    = 4500.0
+  Lobe_T_Min		         = 0.85
+  Lobe_Granulation               = 0.03
+  Lobe_Granulation_Period        = 0.06
+
+# Accretion disc
+Show_Disc                        = true
+  Disc_Nsteps                    = 60
+  Disc_Rad                       = 0.5
+  Disc_R_in                      = 0.0
+  Disc_Geom_Thick                = 0.05
+  Disc_Eff_Thick                 = -0.05
+  Disc_Tout                      = 6000.0
+  Disc_Temp_Grad                 = -0.43
+  Disc_Beta                      = 1.29
+  Disc_N_Flare                   = 1500
+  Disc_Flare_Length              = 25
+
+# Optically thin accretion disc
+Show_Thin_Disc                        = false
+  Thin_Disc_Nsteps                    = 60
+  Thin_Disc_Rad                       = 0.6
+  Thin_Disc_R_in                      = 0.2
+  Thin_Disc_Geom_Thick                = 0.01
+  Thin_Disc_Beta                      = 1.29
+  Thin_Disc_Red                       = 1.0
+  Thin_Disc_Green                     = 0.3
+  Thin_Disc_Blue                      = 0.0
+  Thin_Disc_Opacity                   = 0.2
+  Thin_Disc_N_Flare                   = 1500
+  Thin_Disc_Flare_Length              = 25
+  Thin_Disc_Hot_Opacity               = 3.0
+
+# Accretion stream
+Show_Stream                      = false
+  Stream_Max_Thick		 = 1.0
+  Stream_Open_Angle              = 10.0
+  Stream_Red                     = 1.0
+  Stream_Green                   = 1.0
+  Stream_Blue                    = 1.0
+  Stream_Opacity                 = 10.0
+
+# Stream-disc impact point
+Show_Hot_Spot                    = false
+  Hot_Spot_Size                  = 0.08
+  Hot_Spot_Red			 = 1.0
+  Hot_Spot_Green		 = 1.0
+  Hot_Spot_Blue			 = 1.0
+  Hot_Spot_Opacity               = 0.5
+  Hot_Spot_Timescale             = 0.03
+  Hot_Temp                       = 0.0
+
+# Disc wind/corona #1
+Show_Corona1                     = true
+  Corona1_Rad                    = 0.01
+  Corona1_Red			 = 1.0
+  Corona1_Green			 = 1.0
+  Corona1_Blue			 = 1.0
+  Corona1_Opacity                = 1.5
+  Corona1_Exponent               = 5.0
+
+# Disc wind/corona #2
+Show_Corona2                     = true
+  Corona2_Rad                    = 0.2
+  Corona2_Red			 = 1.0
+  Corona2_Green			 = 1.0
+  Corona2_Blue			 = 1.0
+  Corona2_Opacity                = 1.5
+  Corona2_Exponent               = 5.0
+
+# Wind from companion star
+Show_Stellar_Wind                = true
+  Stellar_Wind_Rad               = 1.2
+  Stellar_Wind_Red               = 1.0
+  Stellar_Wind_Green             = 0.8
+  Stellar_Wind_Blue		 = 0.5
+  Stellar_Wind_Opacity           = 1.6
+  Stellar_Wind_Exponent          = 6.0
+
+# Jet
+Show_Jet                         = true
+  Jet_Opening_Angle              = 5.0
+  Jet_Upper_Red                  = 0.6
+  Jet_Upper_Green                = 0.0
+  Jet_Upper_Blue                 = 0.0
+  Jet_Lower_Red                  = 1.0
+  Jet_Lower_Green                = 0.0
+  Jet_Lower_Blue                 = 0.3
+  Jet_Opacity                    = 1.0
+  Jet_Exponent                   = 5.0
+  Jet_Inclination                = 30.0
+  Jet_Rotation                   = 160.0
