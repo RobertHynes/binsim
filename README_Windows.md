@@ -1,3 +1,18 @@
+### 2025 Process
+
+1. Install MSYS2 from https://www.msys2.org/. Installation instructions are on the front page.
+2. Install GCC from mingw-64 https://www.mingw-w64.org/. This can actually be done within the MSYS2 terminal (MSYS2 UCRT64 in the Start menu) using the pacman package manager:
+
+pacman -S mingw-w64-ucrt-x86_64-gcc
+
+3. Install freeglut as above:
+
+pacman -S mingw-w64-x86_64-freeglut
+
+4. Install libjpeg as above:
+
+pacman -S mingw-w64-x86_64-libjpeg-turbo
+
 COMPILING BINSIM
 ----------------
 
