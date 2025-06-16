@@ -1,6 +1,6 @@
 # Configure compiler - binary name and flags
 
-# Use GNU GCC (g++) on Linux, some Unixes
+# Use GNU GCC (g++) on Linux, some Unixes, Windows under MSYS2
 CC = g++
 
 # Some other Unixes may use a commercial compiler, often called CC
@@ -15,22 +15,32 @@ CC = g++
 # Define flags for release version
 CFLAGS = -w -O
 
-GLLIBDIR = -L"C:\Windows\System32"
+###############################################################################
+# Operating system specific configurations
+###############################################################################
 
+# Windows 11 setup under MSYS2 with mingw64. Uses OpenGL built into Windows 
+# together with libjpeg and freeglut. X11 libraries are not relevant to this
+# configuration
+
+# Library and include paths
+GLLIBDIR = -L"C:\Windows\System32"
+JPEGLIBDIR = 
+X11LIBDIR = 
+GLINCLUDEDIR =
+JPEGINCLUDEDIR = 
+X11INCLUDEDIR = 
+
+# Libraries to link against
+GLLIBS = -lfreeglut -lglu32 -lopengl32
+XLIBS = 
+JPEGLIBS = -ljpeg
 
 ###############################################################################
-# Library and include file paths
 
-# Define library and header directories
-# My setup with Mesa compiled from source
-#GLLIBDIR = -L/usr/local/mesa/lib
-#JPEGLIBDIR = 
-#X11LIBDIR = -L/usr/X11R6/lib
-#GLINCLUDEDIR = -I/usr/local/mesa/include
-#JPEGINCLUDEDIR = 
-#X11INCLUDEDIR = -I/usr/X11R6/include
+# Ubuntu Linux (tested on 22.04). Template for 'out of the box' Linux build.
 
-# Ubuntu test
+# Library and include paths
 GLLIBDIR =
 JPEGLIBDIR = 
 X11LIBDIR = 
@@ -38,33 +48,32 @@ GLINCLUDEDIR =
 JPEGINCLUDEDIR = 
 X11INCLUDEDIR = 
 
-# Standard Redhat 6.2/7.0/7.1/7.2 setup
-#GLLIBDIR =
-#JPEGLIBDIR = 
-#X11LIBDIR = -L/usr/X11R6/lib
-#GLINCLUDEDIR =
-#JPEGINCLUDEDIR = 
-#X11INCLUDEDIR = -I/usr/X11R6/include
+# Libraries to link against
+GLLIBS = -lglut -lGLU -lGL
+XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+JPEGLIBS = -ljpeg
 
-# Example Solaris setup; will need customisation since you will 
-# likely have to install Mesa and/or libjpeg yourself
-#GLLIBDIR = -L/usr/local/lib
-#JPEGLIBDIR =
-#X11LIBDIR = 
-#GLINCLUDEDIR = -I/usr/local/include
-#JPEGINCLUDEDIR =
-#X11INCLUDEDIR =
+###############################################################################
 
 # Mac OS X setup for XFree86, courtesy of Paul Ray (Paul.Ray@nrl.navy.mil)
 # Uses XFree86 OpenGL and glut-3.7 from /usr/local (which you must compile)
 # Get glut from http://www.opengl.org/developers/documentation/glut/#2
 # Hopefully glut will soon be added to fink
+
+# Library and include paths
 #GLLIBDIR = -L/usr/local/lib/
 #JPEGLIBDIR = -L/sw/lib/
 #X11LIBDIR = -L/usr/X11R6/lib/
 #GLINCLUDEDIR = -I/usr/local/include/
 #JPEGINCLUDEDIR = -I/sw/include/
 #X11INCLUDEDIR = -I/usr/X11R6/include/
+
+# Libraries to link against
+#GLLIBS = -framework OpenGL -framework GLUT -lobjc
+#XLIBS = 
+#JPEGLIBS = -ljpeg
+
+###############################################################################
 
 # Mac OS X Native Aqua setup, courtesy of Paul Ray (Paul.Ray@nrl.navy.mil)
 # Uses the built-in MacOS X GLUT framework
@@ -73,6 +82,8 @@ X11INCLUDEDIR =
 # and have compiled libjpeg with fink (see http://fink.sourceforge.net)
 # This version does not look good because it doesn't handle the NaNs
 # that get passed to OpenGL by binsim very well.  Turn off HighQuality.
+
+# Library and include paths
 #GLLIBDIR = 
 #JPEGLIBDIR = -L/sw/lib/
 #X11LIBDIR = 
@@ -80,26 +91,61 @@ X11INCLUDEDIR =
 #JPEGINCLUDEDIR = -I/sw/include/
 #X11INCLUDEDIR = 
 
-###############################################################################
 # Libraries to link against
+#GLLIBS = -framework OpenGL -framework GLUT -lobjc
+#XLIBS = 
+#JPEGLIBS = -ljpeg
 
-# Define libraries for all Unix+X11 setups I have tried (including Mac OS X
-# with XFree86)
+###############################################################################
+
+# Generic Linux setup with Mesa compiled from source [Old]
+
+# Library and include paths
+#GLLIBDIR = -L/usr/local/mesa/lib
+#JPEGLIBDIR = 
+#X11LIBDIR = -L/usr/X11R6/lib
+#GLINCLUDEDIR = -I/usr/local/mesa/include
+#JPEGINCLUDEDIR = 
+#X11INCLUDEDIR = -I/usr/X11R6/include
+
+# Libraries to link against
 GLLIBS = -lglut -lGLU -lGL
 XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
 JPEGLIBS = -ljpeg
 
-# Define libraries for all Unix+X11 setups I have tried (including Mac OS X
-# with XFree86)
-#GLLIBS = -lglut -lGLU -lGL
-GLLIBS = -lfreeglut -lglu32 -lopengl32
-#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
-XLIBS = 
-JPEGLIBS = -ljpeg
+###############################################################################
 
-## Mac OS X Native GL support
-#GLLIBS = -framework OpenGL -framework GLUT -lobjc
-#XLIBS = 
+# Standard Redhat 6.2/7.0/7.1/7.2 setup [Now very old, I haven't used Redhat in a long time]
+
+# Library and include paths
+#GLLIBDIR =
+#JPEGLIBDIR = 
+#X11LIBDIR = -L/usr/X11R6/lib
+#GLINCLUDEDIR =
+#JPEGINCLUDEDIR = 
+#X11INCLUDEDIR = -I/usr/X11R6/include
+
+# Libraries to link against
+#GLLIBS = -lglut -lGLU -lGL
+#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+#JPEGLIBS = -ljpeg
+
+###############################################################################
+
+# Example Solaris setup; will need customisation since you will 
+# likely have to install Mesa and/or libjpeg yourself [Very old]
+
+# Library and include paths
+#GLLIBDIR = -L/usr/local/lib
+#JPEGLIBDIR =
+#X11LIBDIR = 
+#GLINCLUDEDIR = -I/usr/local/include
+#JPEGINCLUDEDIR =
+#X11INCLUDEDIR =
+
+# Libraries to link against
+#GLLIBS = -lglut -lGLU -lGL
+#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
 #JPEGLIBS = -ljpeg
 
 ###############################################################################
