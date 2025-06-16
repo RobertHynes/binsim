@@ -6,7 +6,7 @@ I'm sure it would be possible to build Binsim with Visual Studio, CMake, etc for
 
 ### MSYS2/MINGW64 Instructions
 
-1. Install MSYS2 from https://www.msys2.org/. Installation instructions are on the front page. It will open a MSYS2 UCRT64 terminal window which you will use for the next steps.
+1. Install MSYS2 from https://www.msys2.org/. Installation instructions are on the front page. It will open a MSYS2 UCRT64 terminal window. DON'T USE IT. Instead open a mingw64 terminal (you can type mingw64 in the Windows search if you don't have a shortcut). They have different paths set up and the instructions below are for mingw64.
 
 2. Install development tools. This can be done within the MSYS2 terminal using the pacman package manager. Space can probably be saved here, but I just installed all.
 
