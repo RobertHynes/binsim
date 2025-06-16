@@ -18,11 +18,11 @@ I'm sure it would be possible to build Binsim with Visual Studio, CMake, etc for
 
 4. Install libjpeg as above:
 
-   *$ pacman -S mingw-w64-x86_64-libjpeg-turbo**
+   *$ pacman -S mingw-w64-x86_64-libjpeg-turbo*
 
 5. Optionally download emacs to edit makefile and parameter files. Or use any other editor.
 
-pacman -S mingw-w64-x86_64-emacs
+   *$ pacman -S mingw-w64-x86_64-emacs*
 
 This will have created a Unix-like environment within C:\msys64. Many unix commands will be available (pwd, ls, grep, etc). The packages have been installed to C:\msys64\mingw64 (include and lib directories).
 
