@@ -32,7 +32,7 @@ This will have created a Unix-like environment within C:\msys64. Many unix comma
 
 7. Download the Binsim repo
 
-   *$ git close https://github.com/RobertHynes/binsim.git*
+   *$ git clone https://github.com/RobertHynes/binsim.git*
 
 8. Change to the main Binsim directory and edit the Makefile. After all the steps above this should be a matter of making sure the compiler is set to g++, uncommenting the Windows section, commenting out sections for other operating systems, and commenting out the OSBinsim section (not supported with this Binsim configuration at least). 
 
