@@ -12,17 +12,17 @@ I'm sure it would be possible to build Binsim with Visual Studio, CMake, etc for
 
    *$ pacman -S --needed base-devel mingw-w64-x86_64-toolchain*
 
-4. Install GCC from mingw-64 https://www.mingw-w64.org/.
-   
-   *$ pacman -S mingw-w64-ucrt-x86_64-gcc*
-
-4. Install freeglut as above:
+3. Install freeglut as above:
 
    *$ pacman -S mingw-w64-x86_64-freeglut*
 
-5. Install libjpeg as above:
+4. Install libjpeg as above:
 
    *$ pacman -S mingw-w64-x86_64-libjpeg-turbo**
+
+5. Optionally download emacs to edit makefile and parameter files. Or use any other editor.
+
+pacman -S mingw-w64-x86_64-emacs
 
 This will have created a Unix-like environment within C:\msys64. Many unix commands will be available (pwd, ls, grep, etc). The packages have been installed to C:\msys64\mingw64 (include and lib directories).
 
@@ -43,5 +43,6 @@ This will have created a Unix-like environment within C:\msys64. Many unix comma
 10. Edit parameter files to taste and run!
 
    *$ binsim sample.par*
+
 
 
