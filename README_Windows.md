@@ -1,3 +1,35 @@
+### 2025 Process
+
+1. Install MSYS2 from https://www.msys2.org/. Installation instructions are on the front page. It will open a MSYS2 UCRT64 terminal window which you will use for the next steps.
+
+2. Install development tools. This can be done within the MSYS2 terminal using the pacman package manager:
+
+pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+
+Space can probably be saved here, but I just installed all.
+
+3. Install GCC from mingw-64 https://www.mingw-w64.org/.
+   
+pacman -S mingw-w64-ucrt-x86_64-gcc
+
+4. Install freeglut as above:
+
+pacman -S mingw-w64-x86_64-freeglut
+
+5. Install libjpeg as above:
+
+pacman -S mingw-w64-x86_64-libjpeg-turbo
+
+This will have created a Unix-like environment within C:\msys64. Many unix commands will be available (pwd, ls, grep, etc). The packages have been installed to C:\msys64\mingw64 (include and lib directories).
+
+6. Install git as above
+
+pacman -S git
+
+7. Download the Binsim repo
+
+
+
 COMPILING BINSIM
 ----------------
 
