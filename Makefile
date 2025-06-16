@@ -15,6 +15,9 @@ CC = g++
 # Define flags for release version
 CFLAGS = -w -O
 
+GLLIBDIR = -L"C:\Windows\System32"
+
+
 ###############################################################################
 # Library and include file paths
 
@@ -84,6 +87,14 @@ X11INCLUDEDIR =
 # with XFree86)
 GLLIBS = -lglut -lGLU -lGL
 XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+JPEGLIBS = -ljpeg
+
+# Define libraries for all Unix+X11 setups I have tried (including Mac OS X
+# with XFree86)
+#GLLIBS = -lglut -lGLU -lGL
+GLLIBS = -lfreeglut -lglu32 -lopengl32
+#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+XLIBS = 
 JPEGLIBS = -ljpeg
 
 ## Mac OS X Native GL support
