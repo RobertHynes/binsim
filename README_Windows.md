@@ -42,7 +42,7 @@ This will have created a Unix-like environment within C:\msys64. Many unix comma
 
 10. Edit parameter files to taste and run
 
-    *$ binsim sample.par*
+    *$ ./binsim sample.par*
 
 
 
