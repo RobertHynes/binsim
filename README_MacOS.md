@@ -14,7 +14,8 @@ OpenGL.
 1. You must have the Mac OS X Developer Tools (XCode) installed. You can download XCode
    from the App Store.
 
-2. You will need jpeg lib. The Makefile is written assuming you install this with Homebrew
+2. You will need some version of libjpeg. The Makefile is written assuming you use libjpeg-turbo 
+(https://libjpeg-turbo.org/) and install this with Homebrew
 (brew install libjpeg-turbo). If you use another installer like fink or compile from source
 the headers and libraries will be in a different place and you will need to modify the 
 Makefile.
