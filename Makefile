@@ -52,8 +52,6 @@ CFLAGS = -w -O
 # MacOS Native Aqua setup
 # Uses the built-in MacOS X GLUT framework
 # Requires libjpeg-turb
-# This version does not look good because it doesn't handle the NaNs
-# that get passed to OpenGL by binsim very well.  Turn off HighQuality.
 
 # Library and include paths
 GLLIBDIR = 
