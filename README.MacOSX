@@ -1,51 +1,38 @@
-The following notes on compiling BinSim on Mac OS X 10.1 were kindly
-provided by Paul Ray (Paul.Ray@nrl.navy.mil)
+## Building Binsim on Mac OS
 
--------------------------------------------------------------------------------
+These instructions were written in 2025 for an install on Mac OS Sequoia 15.3.1. 
+They are adapted from one of three options in an earlier Mac port by Paul Ray 
+(Paul.Ray@nrl.navy.mil).
 
-There are several possibilities for getting BinSim to work under MacOSX
+They are written with the Mac OS X System OpenGL Framework in mind which includes 
+GLUT. You still edit the sample.par file and run binsim from the command line, 
+but a native (Aqua) window will pop up and render the image using hardware-accelerated 
+OpenGL.
 
---
+### Prerequisites
 
-1. Using the Makefile included with binsim-0.7.3 or later.
-This will compile against the Mac OS X System OpenGL Framework which
-includes GLUT.  You still edit the sample.par file and run binsim from
-the command line, but a native (Aqua) window will pop up and render
-the image using hardware-accelerated OpenGL.
+1. You must have the Mac OS X Developer Tools (XCode) installed. You can download XCode
+   from the App Store.
 
-To to this follow these steps:
+2. You will need jpeg lib. The Makefile is written assuming you install this with Homebrew
+(brew install libjpeg-turbo). If you use another installer like fink or compile from source
+the headers and libraries will be in a different place and you will need to modify the 
+Makefile.
 
-* You must have the Mac OS X Developer Tools installed.  You can
-download them for free from http://connect.apple.com after you
-register.  They are 187MB!
+### Build
 
-* You must have the jpeg lib installed.  For most people the easiest
-way to do this is use "fink" which installs Unix software for MacOS
-X.  See http://fink.sourceforge.net and follow their installation
-instructions, then just say "fink install libjpeg" to get the library
-installed into /sw.
+Edit the Makefile and comment out all the sections dealing with operating systems except for
+"MacOS Native Aqua". Then just type "make" and it should build. Run it with 
+"./binsim sample.par" and it should work fine.
 
-* Make the following link in the binsim directory so that the header
-files can be found:
-ln -s /System/Library/Frameworks/GLUT.framework/Headers GL
+## Alternative Build Instructions (OLD)
 
-* Then, uncomment the Makefile lines referring to Mac OS X Native Aqua version
-This changes the C++ compiler to "c++", puts in the correct search places
-for the libraries and include files and modifies the GLLIBDIR to use
-the Mac OpenGL.
+These instructions were provided in the 2000's and will likely need modification and updates if
+wish to go this path. Please let me know if you succeed!
 
-* Then just type "make" and it should build.
+### ProjectBuilder
 
-* Run it with "./binsim sample.par" and it should work fine.
-
-* You may find that the images look worse with HighQuality=true; this
-issue is being investigated.
-
-
---
-
-
-2. BinSim can also be compiled using ProjectBuilder.  These directions
+BinSim can also be compiled using ProjectBuilder.  These directions
 are from memory, but should get you started.  It will also use the
 native Mac OS X windowing system (Aqua)
 
@@ -78,9 +65,9 @@ Add "/sw/lib" to Search Paths / Libraries
 within ProjectBuilder, it can't find sample.par.  Probably I am doing
 something wrong.
 
---
+### XFree86
 
-3. Finally, BinSim can also be compiled against XFree86 or another X11
+Finally, BinSim can also be compiled against XFree86 or another X11
 distribution for OS X (such as Tenon's XTools or eXodus).
 
 * You must install XFree86 to use this version!
@@ -95,8 +82,4 @@ Hopefully, glut will soon be added as a fink package.
 
 * You still need libjpeg from fink but this version has no dependence
 
-I hope this helps.  Please e-mail me if you have any questions or
-comments.
-
--- Paul Ray (Paul.Ray@nrl.navy.mil)
 
