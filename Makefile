@@ -1,13 +1,7 @@
 # Configure compiler - binary name and flags
 
-# Use GNU GCC (g++) on Linux, some Unixes, Windows under MSYS2
+# Use GNU GCC (g++). This is now widespread but you may need an alternative
 CC = g++
-
-# Some other Unixes may use a commercial compiler, often called CC
-#CC = CC
-
-# Use "c++" for MacOS X
-#CC = c++
 
 # Define flags for development version
 #CFLAGS = -pg -g -Wall -ansi
@@ -24,34 +18,55 @@ CFLAGS = -w -O
 # configuration
 
 # Library and include paths
-GLLIBDIR = -L"C:\Windows\System32"
-JPEGLIBDIR = 
-X11LIBDIR = 
-GLINCLUDEDIR =
-JPEGINCLUDEDIR = 
-X11INCLUDEDIR = 
+#GLLIBDIR = -L"C:\Windows\System32"
+#JPEGLIBDIR = 
+#X11LIBDIR = 
+#GLINCLUDEDIR =
+#JPEGINCLUDEDIR = 
+#X11INCLUDEDIR = 
 
 # Libraries to link against
-GLLIBS = -lfreeglut -lglu32 -lopengl32
-XLIBS = 
-JPEGLIBS = -ljpeg
+#GLLIBS = -lfreeglut -lglu32 -lopengl32
+#XLIBS = 
+#JPEGLIBS = -ljpeg
 
 ###############################################################################
 
 # Ubuntu Linux (tested on 22.04). Template for 'out of the box' Linux build.
 
 # Library and include paths
-GLLIBDIR =
-JPEGLIBDIR = 
+#GLLIBDIR =
+#JPEGLIBDIR = 
+#X11LIBDIR = 
+#GLINCLUDEDIR =
+#JPEGINCLUDEDIR = 
+#X11INCLUDEDIR = 
+
+# Libraries to link against
+#GLLIBS = -lglut -lGLU -lGL
+#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+#JPEGLIBS = -ljpeg
+
+###############################################################################
+
+# MacOS Native Aqua setup
+# Uses the built-in MacOS X GLUT framework
+# Requires libjpeg-turb
+# This version does not look good because it doesn't handle the NaNs
+# that get passed to OpenGL by binsim very well.  Turn off HighQuality.
+
+# Library and include paths
+GLLIBDIR = 
+JPEGLIBDIR =  -L/opt/homebrew/opt/jpeg-turbo/lib
 X11LIBDIR = 
-GLINCLUDEDIR =
-JPEGINCLUDEDIR = 
+GLINCLUDEDIR = -I/opt/X11/include
+JPEGINCLUDEDIR =  -I/opt/homebrew/opt/jpeg-turbo/include
 X11INCLUDEDIR = 
 
 # Libraries to link against
-GLLIBS = -lglut -lGLU -lGL
-XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
-JPEGLIBS = -ljpeg
+#GLLIBS = -framework OpenGL -framework GLUT -lobjc
+#XLIBS = 
+#JPEGLIBS = -ljpeg
 
 ###############################################################################
 
@@ -75,29 +90,6 @@ JPEGLIBS = -ljpeg
 
 ###############################################################################
 
-# Mac OS X Native Aqua setup, courtesy of Paul Ray (Paul.Ray@nrl.navy.mil)
-# Uses the built-in MacOS X GLUT framework
-# Requires that you have done the following command in this directory:
-#   ln -s /System/Library/Frameworks/GLUT.framework/Headers GL
-# and have compiled libjpeg with fink (see http://fink.sourceforge.net)
-# This version does not look good because it doesn't handle the NaNs
-# that get passed to OpenGL by binsim very well.  Turn off HighQuality.
-
-# Library and include paths
-#GLLIBDIR = 
-#JPEGLIBDIR = -L/sw/lib/
-#X11LIBDIR = 
-#GLINCLUDEDIR = -I./
-#JPEGINCLUDEDIR = -I/sw/include/
-#X11INCLUDEDIR = 
-
-# Libraries to link against
-#GLLIBS = -framework OpenGL -framework GLUT -lobjc
-#XLIBS = 
-#JPEGLIBS = -ljpeg
-
-###############################################################################
-
 # Generic Linux setup with Mesa compiled from source [Old]
 
 # Library and include paths
@@ -109,9 +101,9 @@ JPEGLIBS = -ljpeg
 #X11INCLUDEDIR = -I/usr/X11R6/include
 
 # Libraries to link against
-GLLIBS = -lglut -lGLU -lGL
-XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
-JPEGLIBS = -ljpeg
+#GLLIBS = -lglut -lGLU -lGL
+#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+#JPEGLIBS = -ljpeg
 
 ###############################################################################
 
@@ -154,12 +146,12 @@ JPEGLIBS = -ljpeg
 # OpenGL implementation other than Mesa or
 # Mesa 3.4.2 or earlier or
 # Mesa without OSMesa library 
-#OSMESALIB = 
-#OSMESAFLAGS = 
+OSMESALIB = 
+OSMESAFLAGS = 
 
 # Standard OSMesa for Mesa 3.5 or later
-OSMESALIB = -lOSMesa
-OSMESAFLAGS = 
+#OSMESALIB = -lOSMesa
+#OSMESAFLAGS = 
 
 # OSMesa with 16 bits per channel (ie 64bpp).  Only for Mesa 3.5 or later
 #OSMESALIB = -lOSMesa16
