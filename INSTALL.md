@@ -1,5 +1,8 @@
-COMPILATION
-===========
+#Installation Instructions for Linux#
+
+See README_MacOS.md and README_Windows.md for other platforms.
+
+##COMPILATION##
 
 To compile simply untar the source code and type make.  Depending on
 your environment you may need to edit the Makefile to point to Mesa
