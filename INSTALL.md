@@ -1,8 +1,8 @@
-#Installation Instructions for Linux#
+# Installation Instructions for Linux #
 
 See README_MacOS.md and README_Windows.md for other platforms.
 
-##COMPILATION##
+## COMPILATION ##
 
 To compile simply untar the source code and type make.  Depending on
 your environment you may need to edit the Makefile to point to Mesa
@@ -10,11 +10,9 @@ and libjpeg libraries and headers.  The only file required is binsim
 (and optionally osbinsim), so if you wish you can copy this to your
 preferred bin directory.
 
-REQUIRED LIBRARIES
-==================
+## REQUIRED LIBRARIES ##
 
-3D library
-----------
+### 3D library ###
 
 This program requires an OpenGL library or equivalent to be present.
 I have used the free Mesa library (http://mesa3d.sourceforge.net/).
@@ -50,8 +48,7 @@ Mesa-3.5.  For older versions than this the Makefile should be edited
 to the 'No OSMesa' option - off-screen will still be supported but it
 is not in a separate library.
 
-Mesa 16 bit per channel support
--------------------------------
+### Mesa 16 bit per channel support ###
 
 16 bits per channel appears to be a linux only option.  To enable it
 you need to edit the ${MESADIR}/src/config.h file and change #define
@@ -68,8 +65,7 @@ this offers no benefit at present I don't see any point in going to
 the trouble, but the option is there.  If anyone finds a way that the
 two modes can coexist more easily, please let me know.
 
-Image libraries
----------------
+### Image libraries ###
 
 For normal use, the program requires libjpeg.  Under Redhat Linux this
 is provided by the libjpeg and libjpeg-devel packages, included in the
@@ -86,8 +82,7 @@ external library.  Because of the file size PPM output is only
 recommended for making MPEGs, because JPEGs don't seem to work for
 this.
 
-SUPPORTING PROGRAMS
-===================
+## SUPPORTING PROGRAMS ##
 
 To create MPEG movies (Anim + Save keywords both true) requires
 mpeg_encode.  This is not necessary to compile BinSim, just to make
@@ -106,57 +101,5 @@ with many PCs, graphics cards and DVD drives) does a much better job
 allowing fast, high quality, fullscreen playback, on at least some
 machines.
 
-NOTES ON SPECIFIC ENVIRONMENTS
-==============================
 
-Redhat Linux
-------------
-
-This is the platform I have done much of the development and testing
-of binsim on.  Binsim works using the rpm versions of Mesa included
-with Redhat 6.2, 7.0, 7.1, 7.2.  You may wish to upgrade to Mesa 4.01
-to fix the small triangle problem described below.  libjpeg support is
-included by the rpm packages libjpeg and libjpeg-devel.
-
-I have seen problems if you take a standard Redhat 6.2 system, with
-Mesa installed as part of this and then upgraded to XFree86 4.x from
-source.  Building a recent version of Mesa from source seemed to fix
-this problem.
-
-Solaris/SunOS
--------------
-
-I have successfully compiled and run BinSim on SunOS 5.8 with gcc and
-libjpeg and Mesa compiled from source.  You will need to edit the
-makefile to indicate the locations of the libjpeg and Mesa libraries
-and headers, and possibly also set your LD_LIBRARY_PATH to include
-their library directories.
-
-Other Unix
-----------
-
-BinSim should work on any Unix platform with a relatively up to date
-C++ compiler and the libjpeg and Mesa libraries installed.  Let me
-know if you have success or otherwise!
-
-Mac OS X
---------
-
-BinSim has been got working on the Unix-like Mac OS X by Paul Ray
-(Paul.Ray@nrl.navy.mil).  See README.MacOSX for details.
-
-Windows
--------
-
-I have now got BinSim to compile and run under Windows using 
-Visual C++ 6.  See README.Win32 for details.
-
-Note on GCC 3.0
----------------
-
-GCC version 3.0 is a much fussier compiler than earlier versions and
-BinSim 0.6 would not compile with it.  BinSim 0.6.1 and later should
-build under GCC 3.0, but this is not yet my main compiler and I
-haven't tested it much.  If you hit problems then let me know (with
-the compiler error messages).
 
