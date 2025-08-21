@@ -1,4 +1,4 @@
-**Version 1.0, 21 August 2025**
+## Version 1.0, 21 August 2025 ##
 
 -After 20+ years unchanged I think it's time to call this version 1.0!
 
@@ -6,7 +6,7 @@
 
 -Migration to GitHub
 
-**Version 0.9, 12 March 2003**
+## Version 0.9, 12 March 2003 ##
 
  -Added a draft manual in the doc subdirectory
  
@@ -22,12 +22,12 @@
  -Renamed primary and companion irradiating luminosities to Luminosity1 and 
   Luminosity2 respectively
 	
-**Version 0.8.1, 21 May 2002**
+## Version 0.8.1, 21 May 2002 ##
 
  -Reenable the Lobe_T_Min functionality which was accidentally
   disabled in version 0.8.
 	
-**Version 0.8, 20 December 2001**
+## Version 0.8, 20 December 2001 ##
 
  -Tried to fix NaN problems on Mac OS X.
  
@@ -53,7 +53,7 @@
   
  -Added Disc_R_in parameter to allow discs with holes in the middle.
 	
-**Version 0.7.3, 11 October 2001**
+ ## Version 0.7.3, 11 October 2001 ##
 
  -Added HighQuality_AA option to allow selective disabling of antialiasing 
   option in high quality mode
@@ -63,18 +63,18 @@
   
  -Simplified dependencies in Makefile removing many redundant entries.
 
-**Version 0.7.2, 31 August 2001**
+## Version 0.7.2, 31 August 2001 ##
 
  -Animations (to MPEGs) now work in off-screen mode.  This was omitted from 
   earlier versions (=forgotten!)
 	
-**Version 0.7.1, 30 July 2001**
+## Version 0.7.1, 30 July 2001 ##
 
  -Fixed black spot on pole of companion star in v0.7
  
  -Fixed phase_index bug in v0.7 which can lead to segmentation fault
 
-**Version 0.7, 27 July 2001**
+## Version 0.7, 27 July 2001 ##
 	
  -Miscellaneous bug fixes.
 	
@@ -90,7 +90,7 @@
  -Off screen rendering now supported, via the osbinsim binary.  This includes 
   the new 64bpp option in Mesa 3.5 if available.
 
-**Version 0.6.1, 27 June 2001**
+## Version 0.6.1, 27 June 2001 ##
 
  -Some documentation changes and corrections and several minor bug fixes.
  
@@ -112,7 +112,7 @@
   
  -Should now build under GCC 3.0; version 0.6 will not.
 
-**Version 0.6, 13 June 2001**
+## Version 0.6, 13 June 2001 ##
 
 Mainly this is an attempt to produce a test release based on a subset
 of features previously used.  As such no major new features or
