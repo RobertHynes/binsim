@@ -1,9 +1,6 @@
 /*
   Class to calculate properties of an accretion disc
 
-  Released as part of BinSim 1.0
-  This release built on August 25 2025
-
   Author: Robert I. Hynes (rhynes@lsu.edu)
           Louisiana State University
           Department of Physics and Astronomy
