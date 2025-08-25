@@ -36,16 +36,16 @@ CFLAGS = -w -O
 
 # Library and include paths
 #GLLIBDIR =
-#JPEGLIBDIR = 
-#X11LIBDIR = 
-#GLINCLUDEDIR =
-#JPEGINCLUDEDIR = 
-#X11INCLUDEDIR = 
+JPEGLIBDIR = 
+X11LIBDIR = 
+GLINCLUDEDIR =
+JPEGINCLUDEDIR = 
+X11INCLUDEDIR = 
 
 # Libraries to link against
-#GLLIBS = -lglut -lGLU -lGL
-#XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
-#JPEGLIBS = -ljpeg
+GLLIBS = -lglut -lGLU -lGL
+XLIBS = -lX11 -lXext -lXmu -lXt -lXi -lSM -lICE
+JPEGLIBS = -ljpeg
 
 ###############################################################################
 
@@ -54,12 +54,12 @@ CFLAGS = -w -O
 # Requires libjpeg-turb
 
 # Library and include paths
-GLLIBDIR = 
-JPEGLIBDIR =  -L/opt/homebrew/opt/jpeg-turbo/lib
-X11LIBDIR = 
-GLINCLUDEDIR = -I/opt/X11/include
-JPEGINCLUDEDIR =  -I/opt/homebrew/opt/jpeg-turbo/include
-X11INCLUDEDIR = 
+#GLLIBDIR = 
+#JPEGLIBDIR =  -L/opt/homebrew/opt/jpeg-turbo/lib
+#X11LIBDIR = 
+#GLINCLUDEDIR = -I/opt/X11/include
+#JPEGINCLUDEDIR =  -I/opt/homebrew/opt/jpeg-turbo/include
+#X11INCLUDEDIR = 
 
 # Libraries to link against
 #GLLIBS = -framework OpenGL -framework GLUT -lobjc
