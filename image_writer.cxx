@@ -1,9 +1,6 @@
 /*
   Utility class to write image data to files
 
-  Released as part of BinSim 1.0
-  This release built on August 25 2025
-
   Author: Robert I. Hynes (rhynes@lsu.edu)
           Louisiana State University
           Department of Physics and Astronomy
@@ -250,4 +247,5 @@ unsigned char OS16_image_writer::get_blue(const int column, const int row)
   // Read just blue component
   return buffer[((height-row-1)*width + column) * 4 + 2] >> 8;
 }
+
 
