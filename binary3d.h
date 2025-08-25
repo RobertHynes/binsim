@@ -1,9 +1,6 @@
 /*
   Class to describe 3D model of an interacting binary
 
-  Released as part of BinSim 1.0
-  This release built on August 25 2025
-
   Author: Robert I. Hynes (rhynes@lsu.edu)
           Louisiana State University
           Department of Physics and Astronomy
@@ -25,6 +22,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. 
 */
+  
 
 
 #ifndef _BINARY3D_H
