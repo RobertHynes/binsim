@@ -2,9 +2,6 @@
   Functions for outputting error messages.  This header defines the
   allowed interfaces; main application must provide implementation.
 
-  Released as part of BinSim 1.0
-  This release built on August 25 2025
-
   Author: Robert I. Hynes (rhynes@lsu.edu)
           Louisiana State University
           Department of Physics and Astronomy
