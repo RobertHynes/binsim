@@ -8,11 +8,6 @@
 
 ## Version 0.9, 12 March 2003 ##
 
- -Added a draft manual in the doc subdirectory
- 
- -Added tutorial parameter files (to accompany the manual) in the tutorial 
-  subdirectory
-  
  -Added sample parameter files in the examples subdirectory
  
  -Added keyword translation capability
