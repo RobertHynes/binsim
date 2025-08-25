@@ -4,10 +4,13 @@ See README_MacOS.md and README_Windows.md for other platforms.
 
 ## COMPILATION ##
 
-To compile simply untar the source code and type make.  Depending on
-your environment you may need to edit the Makefile to point to Mesa
-and libjpeg libraries and headers.  The only file required is binsim
-(and optionally osbinsim), so if you wish you can copy this to your
+These instructions and the makefile were tested on Ubuntu 22.04
+
+To compile simply untar the source code, uncomment the relevant block
+within the makefile and type make.  Depending on your environment you 
+may need to further edit the Makefile to point to Mesa and libjpeg 
+libraries and headers.  The only file required is binsim (and 
+optionally osbinsim), so if you wish you can copy this to your
 preferred bin directory.
 
 ## REQUIRED LIBRARIES ##
@@ -15,16 +18,13 @@ preferred bin directory.
 ### 3D library ###
 
 This program requires an OpenGL library or equivalent to be present.
-I have used the free Mesa library (http://mesa3d.sourceforge.net/).
-The current stable release is version 4.01.  Commercial OpenGL
+I have used the free Mesa library (https://mesa3d.org/). Commercial OpenGL
 implementations should work as well; BinSim has been found to work
 with the Apple licensed OpenGL included with MacOS X (see
-README.MacOSX) and on Windows (see README.Win32).  The GL Utility
-Toolkit, GLUT,
-(http://www.opengl.org/developers/documentation/glut.html) is also
-required but this is included with Mesa.  If you are installing Mesa
-yourself, then get both the MesaLib and MesaDemos packages (or the
-whole CVS tree) as GLUT is contained in the latter.
+README_MacOS) and on Windows (see README_Windows).  The GL Utility
+Toolkit, GLUT, is also required but this is included with Mesa.  If you 
+are installing Mesa yourself, then get both the MesaLib and MesaDemos 
+packages (or the whole CVS tree) as GLUT is contained in the latter.
 
 If you are not sure if you have an OpenGL compatible library what you
 need to look for are:
@@ -39,16 +39,13 @@ need to look for are:
 
 This is not an exhaustive list of places to look.  Some installations
 may not be in standard directories, e.g. you may have
-/usr/local/Mesa-3.5/include and /usr/local/Mesa-3.5/lib.  You may have
+/usr/local/Mesa-XXXX/include and /usr/local/Mesa-XXXX/lib.  You may have
 to resort to a global search to find them.
 
-For off-screen rendering OSMesa support should be available on all
-recent versions of Mesa, but its location has been changed from
-Mesa-3.5.  For older versions than this the Makefile should be edited
-to the 'No OSMesa' option - off-screen will still be supported but it
-is not in a separate library.
-
 ### Mesa 16 bit per channel support ###
+
+Note: This section is old and has not been tested recently across
+multiple platforms yet.
 
 16 bits per channel appears to be a linux only option.  To enable it
 you need to edit the ${MESADIR}/src/config.h file and change #define
@@ -67,9 +64,10 @@ two modes can coexist more easily, please let me know.
 
 ### Image libraries ###
 
-For normal use, the program requires libjpeg.  Under Redhat Linux this
-is provided by the libjpeg and libjpeg-devel packages, included in the
-distribution.  Sources are available from http://www.ijg.org/.  If you
+For normal use, the program requires libjpeg or libjpeg-turbo (recommended).  
+Under Ubuntu Linux this is provided by the libjpeg8 and libjpeg8-devel 
+packages (or libjpeg8-turbo and libjpeg8-turbo-dev), included in the
+distribution.  Sources are available from https://libjpeg-turbo.org/.  If you
 can't, or don't want to install libjpeg, then remove the -ljpeg from
 the Makefile and add a CFLAGS option -DNOJPEG, and BinSim should
 compile happily.
@@ -84,22 +82,12 @@ this.
 
 ## SUPPORTING PROGRAMS ##
 
+Note: This section is old. mpeg_encode is still available in various 
+places but it has not been tested recently.
+
 To create MPEG movies (Anim + Save keywords both true) requires
 mpeg_encode.  This is not necessary to compile BinSim, just to make
-MPEGs.  The sourcecode for mpeg_encode is available from 
-http://bmrc.berkeley.edu/frame/research/mpeg/index.html.  Linux
-binaries (as rpms) are available from the contrib area of Redhat
-mirror sites - see http://www.redhat.com/download/mirror.html for a
-list of sites.
-
-To play back the movies I usually use mpeg_play, available from the
-same sources as mpeg_encode.  This usually needs the '-dither color'
-option to avoid horrible artefacts.  Under Windows the Windows Media
-Player and Real Player both handle BinSim movies pretty badly with
-lots of jumps.  DVD playback software (e.g. WinDVD which is bundled
-with many PCs, graphics cards and DVD drives) does a much better job
-allowing fast, high quality, fullscreen playback, on at least some
-machines.
+MPEGs.  
 
 
 
