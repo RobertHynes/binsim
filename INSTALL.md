@@ -64,7 +64,7 @@ two modes can coexist more easily, please let me know.
 
 ### Image libraries ###
 
-For normal use, the program requires libjpeg or libjpeg-turbo (recommended).  
+For normal use, the program requires libjpeg or libjpeg-turbo (recommended).
 Under Ubuntu Linux this is provided by the libjpeg8 and libjpeg8-devel 
 packages (or libjpeg8-turbo and libjpeg8-turbo-dev), included in the
 distribution.  Sources are available from https://libjpeg-turbo.org/.  If you
