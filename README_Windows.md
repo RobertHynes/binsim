@@ -2,7 +2,7 @@
 
 These instructions were written in 2025 for an install on Windows 11. Anticipating most users will be familiar with a Unix-like environment they use MSYS2 and mingw64 to create a Unix-like environment within Windows complete with a root filesystem, many familiar Unix/GNU tools, and the GNU compilers like g++. OpenGL support is based a combination of the OpenGL implementation built in to Windows and the FreeGLUT library.
 
-I'm sure it would be possible to build Binsim with Visual Studio, CMake, etc for those familiar with that environment. I tried that first and couldn't get the libraries to work, among issues. Please feel free to create a fork and add instructions and makefiles if that works for you.
+I'm sure it would be possible to build Binsim with Visual Studio, CMake, etc for those familiar with that environment. I had Visual Studio working 20 years ago, but couldn't get the libraries to work this time around, among issues. Please feel free to create a fork and add instructions and makefiles if that works for you.
 
 ### MSYS2/MINGW64 Instructions
 
@@ -43,6 +43,7 @@ This will have created a Unix-like environment within C:\msys64. Many unix comma
 10. Edit parameter files to taste and run
 
     *$ ./binsim sample.par*
+
 
 
 
