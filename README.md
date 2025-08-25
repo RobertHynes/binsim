@@ -1,4 +1,4 @@
-# BinSim 0.9, Robert I. Hynes, 6 June 2025
+# BinSim 1.0, Robert I. Hynes, 25 August 2025
 
 ### OpenGL-based code for visualizing interacting binary stars
 
@@ -7,8 +7,8 @@ binaries (cataclysmic variables, X-ray binaries, etc).  In many places
 the science has been fudged or ignored, so it is not suitable for
 modelling light curves or spectra.  The code uses the OpenGL API to do
 the 3D rendering.  As such there are some limitations since this
-approach is better suited to rendering polygons (eg surface elements
-of a star or disc) than to volumetric rendering (eg an accretion
+approach is better suited to rendering polygons (e.g. surface elements
+of a star or disc) than to volumetric rendering (e.g. an accretion
 stream or disc wind).  Consequently the treatment of optically thin
 objects is rather poor.  At present the code will render the mass
 donor star, an axisymmetric disc (no superhumps, warps or spirals
@@ -17,9 +17,9 @@ represent an accretion disc corona, a disc wind, some other kind of
 uncollimated outflow or even a white dwarf!
 
 *This code has been dormant for a long time, but has remained in use. In 
-migrating it to GitHub, I'm also working on updating the README files and 
+migrating it to GitHub, I've worked on updating the README files and 
 checking usability on different platforms. This version is currently known 
-to work on Ubuntu 22.04.*
+to work on Ubuntu 22.04, MacOS Sequoia 15.5, and Windows 11.*
 
 ## Usage
 
@@ -351,29 +351,16 @@ responding to problems so efficiently.  Libjpeg is produced by the
 Independent JPEG Group.  Thanks to Paul Ray and Torrey Lyons for
 testing on Mac OS X.
 
-This is still a beta release code and there are probably some bugs.
+While this code has been in circulation for a while, there may still be some bugs.
 If you find something that doesn't work the way it should, or looks
 odd then let me know.  Equally, if you modify the code and you think
 others would benefit from the improvements I'll consider merging the
 changes into the main code, with suitable acknowledgements.
 
-At present the released code is also incomplete, in the sense that
-there are still some features that I've implemented in development code, and
-produced images from, which are not available.  These will be merged
-back into future releases gradually.
-
-Finally, it is also subject to major changes if I think of a better
-way to do things.  This will mean that new versions may not be
-backwards compatible with old parameter files, although I'll try to
-include some notes with each new version on the changes, as well as an
-updated sample file.
-
 Whatever, if you find the code useful or interesting please let me
 know so I know how widely it is being used and can keep you informed
 of developments.  I'd also like to hear from people who have success
-(or failure) getting the program to work on other systems (currently I
-use Redhat Linux 7.2 with Mesa 3.4.2 or Mesa 3.5 software rendering)
-and/or can suggest any makefile changes needed.
+(or failure) getting the program to work on other systems.
 
 --
 Rob Hynes, Louisiana State University, rhynes@lsu.edu
