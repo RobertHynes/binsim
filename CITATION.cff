@@ -1,0 +1,36 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: BinSim
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Robert
+    family-names: Hynes
+    email: rhynes@lsu.edu
+    affiliation: Louisiana State University
+    orcid: 'https://orcid.org/0000-0003-3318-0223'
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.astro-ph/0110058
+    description: 'Original description of the code:'
+repository-code: 'https://github.com/RobertHynes/binsim'
+repository: 'https://ascl.net/1011.008'
+abstract: >-
+  I have developed a code which allows images to be produced
+  of a variety of interacting binaries for any system
+  parameters. The resulting images are not only helpful in
+  visualising the geometry of a given system but are also
+  helpful in talks and educational work. 
+keywords:
+  - Visualization
+  - Astronomy
+  - Binary Stars
+  - X-ray Binaries
+  - Cataclysmic Variables
+license: GPL-3.0
+version: '1.0'
+date-released: '2025-08-25'
