@@ -26,7 +26,9 @@ Edit the Makefile and comment out all the sections dealing with operating system
 "MacOS Native Aqua". Then just type "make" and it should build. Run it with 
 "./binsim sample.par" and it should work fine.
 
-Depending on your OS version GLUT apparently could be in either /opt/X11/include/GL or /opt/X11/include/GLUT.
+Depending on your OS version GLUT apparently could be in either /opt/X11/include/GL or 
+/opt/X11/include/GLUT. This is included in binsim.cxx and if you are having problems change
+the include statement there. I'll try to come up with a better solution.
 
 ## Alternative Build Instructions (OLD)
 
