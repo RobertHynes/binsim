@@ -1,4 +1,4 @@
-# BinSim 1.0, Robert I. Hynes, 25 August 2025
+# BinSim 1.01, Robert I. Hynes, 8 September 2025
 
 ### OpenGL-based code for visualizing interacting binary stars
 
