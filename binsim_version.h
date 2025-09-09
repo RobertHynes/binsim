@@ -32,7 +32,7 @@
 
 namespace Bin_sim_version {
   // Version number
-  const string version = "1/0";
+  const string version = "1.01";
   
   // Program name
 #ifdef WIN32
