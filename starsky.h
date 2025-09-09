@@ -26,7 +26,11 @@
 #ifndef _STARSKY_H
 #define _STARSKY_H
 
-#include <GL/glut.h>
+#ifdef __APPLE__
+	#include <GLUT/glut.h>
+#else
+	#include <GL/glut.h>
+#endif
 
 #include "keyword.h"
 
