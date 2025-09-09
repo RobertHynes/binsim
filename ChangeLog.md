@@ -1,10 +1,14 @@
+## Version 1.01, 8 September 2025 ##
+
+ -Fixed issues with not finding glut.h on MacOS. This is now assumed to be /opt/X11/include/GLUT as default on MacOS.
+
 ## Version 1.0, 21 August 2025 ##
 
--After 20+ years unchanged I think it's time to call this version 1.0!
+ -After 20+ years unchanged I think it's time to call this version 1.0!
 
--20 year update to makefiles, library references, etc
+ -20 year update to makefiles, library references, etc
 
--Migration to GitHub
+ -Migration to GitHub
 
 ## Version 0.9, 12 March 2003 ##
 
