@@ -27,7 +27,11 @@
 
 #include <iostream>
 
-#include <GL/glut.h>
+#ifdef __APPLE__
+	#include <GLUT/glut.h>
+#else
+	#include <GL/glut.h>
+#endif
 
 #ifndef NOJPEG
 extern "C" {
@@ -247,5 +251,6 @@ unsigned char OS16_image_writer::get_blue(const int column, const int row)
   // Read just blue component
   return buffer[((height-row-1)*width + column) * 4 + 2] >> 8;
 }
+
 
 
